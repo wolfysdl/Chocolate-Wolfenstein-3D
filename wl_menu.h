@@ -147,7 +147,9 @@ void BossKey(void);
 void DrawGun(CP_iteminfo *item_i,CP_itemtype *items,int x,int *y,int which,int basey,void (*routine)(int w));
 void DrawHalfStep(int x,int y);
 void EraseGun(CP_iteminfo *item_i,CP_itemtype *items,int x,int y,int which);
+#ifndef SDL_MAJOR_VERSION == 1
 void SetTextColor(CP_itemtype *items,int hlight);
+#endif
 void DrawMenuGun(CP_iteminfo *iteminfo);
 void DrawStripes(int y);
 
@@ -185,10 +187,10 @@ int CP_NewGame(int);
 int CP_Sound(int);
 int  CP_LoadGame(int quick);
 int  CP_SaveGame(int quick);
-int CP_Control(int);
-int CP_ChangeView(int);
+int CP_Control();
+int CP_ChangeView();
 int CP_ExitOptions(int);
-int CP_Quit(int);
+int CP_Quit();
 int CP_ViewScores(int);
 int  CP_EndGame(int);
 int  CP_CheckQuick(ScanCode scancode);

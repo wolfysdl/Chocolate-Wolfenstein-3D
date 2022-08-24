@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="choco_wold3d"
 	ProjectGUID="{C895AC6E-7364-4865-9609-7BE6CABD7841}"
 	RootNamespace="choco_wold3s"
@@ -41,13 +41,13 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories=".\SDL-1.2.15\include;.\SDL_mixer-1.2.12\include"
+				AdditionalIncludeDirectories="C:\SDL\include\SDL"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
+				WarningLevel="4"
 				DebugInformationFormat="4"
 			/>
 			<Tool
@@ -63,7 +63,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="SDL_mixer.lib SDL.lib opengl32.lib SDLmain.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="SDL-1.2.15\lib\x86;SDL_mixer-1.2.12\lib\x86"
+				AdditionalLibraryDirectories="C:\SDL\lib\x86;&quot;SDL_mixer-1.2.12\lib\x86&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
@@ -117,11 +117,12 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="C:\SDL\include\SDL"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
-				WarningLevel="3"
+				WarningLevel="4"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -135,7 +136,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="SDL.lib SDLmain.lib SDL_mixer.lib opengl32.lib"
 				LinkIncremental="1"
+				AdditionalLibraryDirectories="C:\SDL\lib\x86"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
@@ -174,91 +177,91 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\..\..\crt.cpp"
+				RelativePath=".\crt.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\fmopl.cpp"
+				RelativePath=".\fmopl.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_ca.cpp"
+				RelativePath=".\id_ca.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_in.cpp"
+				RelativePath=".\id_in.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_pm.cpp"
+				RelativePath=".\id_pm.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_sd.cpp"
+				RelativePath=".\id_sd.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_us_1.cpp"
+				RelativePath=".\id_us.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_vh.cpp"
+				RelativePath=".\id_vh.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_vl.cpp"
+				RelativePath=".\id_vl.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\signon.cpp"
+				RelativePath=".\signon.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_act1.cpp"
+				RelativePath=".\wl_act1.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_act2.cpp"
+				RelativePath=".\wl_act2.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_agent.cpp"
+				RelativePath=".\wl_agent.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_debug.cpp"
+				RelativePath=".\wl_debug.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_draw.cpp"
+				RelativePath=".\wl_draw.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_game.cpp"
+				RelativePath=".\wl_game.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_inter.cpp"
+				RelativePath=".\wl_inter.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_main.cpp"
+				RelativePath=".\wl_main.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_menu.cpp"
+				RelativePath=".\wl_menu.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_play.cpp"
+				RelativePath=".\wl_play.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_state.cpp"
+				RelativePath=".\wl_state.c"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_text.cpp"
+				RelativePath=".\wl_text.c"
 				>
 			</File>
 		</Filter>
@@ -268,87 +271,87 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\..\..\audiosod.h"
+				RelativePath="audiosod.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\audiowl6.h"
+				RelativePath="audiowl6.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\crt.h"
+				RelativePath="crt.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\f_spear.h"
+				RelativePath="f_spear.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\fmopl.h"
+				RelativePath="fmopl.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\foreign.h"
+				RelativePath="foreign.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\gfxv_apo.h"
+				RelativePath="gfxv_apo.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\gfxv_sod.h"
+				RelativePath="gfxv_sod.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\gfxv_wl6.h"
+				RelativePath="gfxv_wl6.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_ca.h"
+				RelativePath="id_ca.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_in.h"
+				RelativePath="id_in.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_pm.h"
+				RelativePath="id_pm.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_sd.h"
+				RelativePath="id_sd.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_us.h"
+				RelativePath="id_us.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_vh.h"
+				RelativePath="id_vh.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\id_vl.h"
+				RelativePath="id_vl.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\version.h"
+				RelativePath="version.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_def.h"
+				RelativePath="wl_def.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\wl_menu.h"
+				RelativePath="wl_menu.h"
 				>
 			</File>
-		</Filter>
-		<Filter
-			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
-			>
+			<Filter
+				Name="Resource Files"
+				Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+				UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+				>
+			</Filter>
 		</Filter>
 	</Files>
 	<Globals>

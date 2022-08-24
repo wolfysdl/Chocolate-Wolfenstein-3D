@@ -21,7 +21,6 @@
 #   include <string.h>
 #   include <stdarg.h>
 #include <SDL/SDL.h>
-
 #endif
 
 
@@ -62,6 +61,12 @@ typedef uint32_t longword;
 #ifndef _WIN32
 typedef int8_t boolean;
 #endif
+
+typedef enum
+{
+  false,
+  true
+}bool;
 typedef void * memptr;
 
 typedef struct
@@ -84,6 +89,7 @@ void Quit(const char *errorStr, ...);
 #include "id_ca.h"
 
 #include "wl_menu.h"
+
 
 #define MAPSPOT(x,y,plane) (mapsegs[plane][((y)<<mapshift)+(x)])
 
@@ -1371,14 +1377,14 @@ static inline fixed FixedMul(fixed a, fixed b)
 #define lengthof(x) (sizeof(x) / sizeof(*(x)))
 #define endof(x)    ((x) + lengthof(x))
 
-static inline word READWORD(byte *&ptr)
+static word READWORD(byte ptr[])
 {
     word val = ptr[0] | ptr[1] << 8;
     ptr += 2;
     return val;
 }
 
-static inline longword READLONGWORD(byte *&ptr)
+static inline longword READLONGWORD(byte ptr[])
 {
     longword val = ptr[0] | ptr[1] << 8 | ptr[2] << 16 | ptr[3] << 24;
     ptr += 4;

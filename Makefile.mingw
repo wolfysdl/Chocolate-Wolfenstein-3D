@@ -4,66 +4,24 @@
 # clean: removes object and binary files
 # distclean: removes dependency, object and binary files
 
-#CXX = gcc -std=c89
-
 BINARY = Chocolate-Wolfenstein-3D.exe
 
 VPATH = win32
 
-CFLAGS = -Wpointer-arith
-CFLAGS += -Wreturn-type
-CFLAGS += -Wwrite-strings
-CFLAGS += -Wcast-align
-#CFLAGS = $(INCLUDE)
+CFLAGS = -Wall -Wpointer-arith -Wreturn-type -Wwrite-strings -Wcast-align \
+-std=gnu99 -Werror-implicit-function-declaration -Wimplicit-int -Wsequence-point
 
-CCFLAGS = $(CFLAGS)
-CCFLAGS += -std=c++11
-CCFLAGS += -Werror-implicit-function-declaration
-CCFLAGS += -Wimplicit-int
-CCFLAGS += -Wsequence-point
-#CCFLAGS = $(INCLUDE)
+LDFLAGS += -lmingw32 -mwindows -mconsole -static-libgcc -lSDLmain -lSDL -lSDL_mixer -lopengl32
 
-CXXFLAGS += $(CFLAGS)
+SRCS += fmopl.c id_ca.c id_in.c id_pm.c id_sd.c id_us.c id_vh.c id_vl.c signon.c wl_act1.c \
+wl_act2.c wl_agent.c wl_debug.c wl_draw.c wl_game.c wl_inter.c wl_main.c wl_menu.c wl_play.c \
+wl_state.c wl_text.c crt.c
+#SRCS += sdl_winmain.c
 
-#LDFLAGS = -Wall
-LDFLAGS += -lmingw32
-LDFLAGS += -mwindows
-LDFLAGS += -mconsole
-LDFLAGS += -static-libgcc
-LDFLAGS += -static-libstdc++
-#LDFLAGS = $(LIB)
-LDFLAGS += -lSDLmain -lSDL -lSDL_mixer -lopengl32
+DEPS = $(filter %.d, $(SRCS:.c=.d) $(SRCS:.c=.d))
+OBJS = $(filter %.o, $(SRCS:.c=.o) $(SRCS:.c=.o))
 
-SRCS :=
-SRCS += fmopl.cpp
-SRCS += id_ca.cpp
-SRCS += id_in.cpp
-SRCS += id_pm.cpp
-SRCS += id_sd.cpp
-SRCS += id_us_1.cpp
-SRCS += id_vh.cpp
-SRCS += id_vl.cpp
-SRCS += signon.cpp
-SRCS += wl_act1.cpp
-SRCS += wl_act2.cpp
-SRCS += wl_agent.cpp
-SRCS += wl_debug.cpp
-SRCS += wl_draw.cpp
-SRCS += wl_game.cpp
-SRCS += wl_inter.cpp
-SRCS += wl_main.cpp
-SRCS += wl_menu.cpp
-SRCS += wl_play.cpp
-SRCS += wl_state.cpp
-SRCS += wl_text.cpp
-SRCS += crt.cpp
-SRCS += sdl_winmain.cpp
-
-DEPS = $(filter %.d, $(SRCS:.c=.d) $(SRCS:.cpp=.d))
-OBJS = $(filter %.o, $(SRCS:.c=.o) $(SRCS:.cpp=.o))
-
-.SUFFIXES:
-.SUFFIXES: .c .cpp .d .o
+.SUFFIXES: .c .d .o
 
 REBUILDABLES = $(OBJS) $(BINARY)
 
@@ -81,13 +39,13 @@ endif
 endif
 
 $(BINARY): $(OBJS)
-	$(CXX) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $@
+	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $@
 
-.cpp.o:
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
 
-.cpp.d:
-	$(CXX) $(CXXFLAGS) -MM -MF $@ -MT $< -MT $@ -c $<
+.c.d:
+	$(CC) $(CFLAGS) -MM -MF $@ -MT $< -MT $@ -c $<
 
 .PHONY: clean
 clean:
