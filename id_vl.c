@@ -103,7 +103,7 @@ void    VL_SetVGAPlaneMode (void)
     screen = SDL_SetVideoMode(screenWidth, screenHeight, screenBits,
           (usedoublebuffering ? SDL_HWSURFACE | SDL_DOUBLEBUF : 0)
         | (screenBits == 8 ? SDL_HWPALETTE : 0)
-        | (fullscreen ? SDL_FULLSCREEN : 0) | SDL_OPENGL | SDL_OPENGLBLIT);
+        | (fullscreen ? SDL_FULLSCREEN : 0));
     
     
     if(!screen)
